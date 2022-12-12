@@ -1,0 +1,25 @@
+diff --git a/include/env_default.h b/include/env_default.h
+index 6b27d9abd0..d8c56d5740 100644
+--- a/include/env_default.h
++++ b/include/env_default.h
+@@ -10,6 +10,7 @@
+ #include <env_callback.h>
+ 
+ #include <env_mender.h>
++#include <env_stargazer.h>
+ 
+ #ifdef DEFAULT_ENV_INSTANCE_EMBEDDED
+ env_t embedded_environment __UBOOT_ENV_SECTION__(environment) = {
+diff --git a/include/env_stargazer.h b/include/env_stargazer.h
+new file mode 100644
+index 0000000000..d4be53b6ea
+--- /dev/null
++++ b/include/env_stargazer.h
+@@ -0,0 +1,7 @@
++#ifndef HEADER_ENV_STARGAZER_H
++#define HEADER_ENV_STARGAZER_H
++
++#define CONFIG_USE_BOOTARGS
++#define CONFIG_BOOTARGS "8250.nr_uarts=1 console=ttyS0,115200 rootfstype=ext4 rootwait"
++
++#endif /* HEADER_ENV_STARGAZER_H */
